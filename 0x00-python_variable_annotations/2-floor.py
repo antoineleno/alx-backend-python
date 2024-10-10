@@ -2,6 +2,7 @@
 """Floor module"""
 import math
 
+
 def floor(n: float) -> int:
     """floor function
 
