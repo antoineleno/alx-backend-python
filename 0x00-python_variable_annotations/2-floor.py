@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Floor module"""
+import math
 
-
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     """floor function
 
     Args:
@@ -11,4 +11,4 @@ def floor(n: float) -> float:
     Returns:
         float: Floor value of n
     """
-    return round(n)
+    return int(math.floor(n))
