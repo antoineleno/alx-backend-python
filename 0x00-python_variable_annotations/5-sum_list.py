@@ -15,4 +15,4 @@ def sum_list(input_list: type_list) -> float:
     Returns:
         float: The sum of all values in the list
     """
-    return sum(sum_list)
+    return sum(input_list)
