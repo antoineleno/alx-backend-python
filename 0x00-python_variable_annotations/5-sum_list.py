@@ -3,10 +3,7 @@
 from typing import List
 
 
-type type_list = List[float]
-
-
-def sum_list(input_list: type_list) -> float:
+def sum_list(input_list: List[float]) -> float:
     """summ_list function
 
     Args:
