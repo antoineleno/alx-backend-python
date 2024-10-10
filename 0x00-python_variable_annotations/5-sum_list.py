@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """5-sum_list module"""
+from typing import List
 
 
-type type_list = list[float]
+type type_list = List[float]
 
 
 def sum_list(input_list: type_list) -> float:
