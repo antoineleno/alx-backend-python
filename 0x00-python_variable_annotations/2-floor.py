@@ -12,4 +12,3 @@ def floor(n: float) -> float:
         float: Floor value of n
     """
     return round(n)
-
