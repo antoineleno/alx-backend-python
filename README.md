@@ -16,4 +16,4 @@ alx-backend-python/
     ├── 1-batch_processing.py
     ├── 2-lazy_paginate.py
     ├── 4-stream_ages.py
-│   └── seed.py
+    └── seed.py
