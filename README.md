@@ -11,7 +11,7 @@
 alx-backend-python/
 │
 ├── python-generators-0x00/
-│   ├── README.md
+    ├── README.md
     ├── 0-stream_users.py
     ├── 1-batch_processing.py
     ├── 2-lazy_paginate.py
