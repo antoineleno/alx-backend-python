@@ -76,12 +76,9 @@ def create_table(connection):
         print("Effor: {}".format(e))
 
 
-
-
 def insert_data(connection, data):
     """inserts data in the database if it does not exist"""
 
-    dataset = []
     check_query = "SELECT COUNT(*) FROM user_data WHERE email = %s"
     insert_query = """
     INSERT INTO user_data (user_id, name, email, age)
@@ -90,13 +87,13 @@ def insert_data(connection, data):
     with open(data, newline='') as csvfile, connection.cursor() as cursor:
         reader = csv.DictReader(csvfile)
         dataset = (row for row in reader)
-        for i in range(1000):
-            row = next(dataset)
+        for row in dataset:
             cursor.execute(check_query, (row['email'],))
             exists = cursor.fetchone()[0]
             if exists == 0:
                 uid = str(uuid.uuid4())
-                cursor.execute(insert_query, (uid, row['name'], row['email'], row['age']))
+                cursor.execute(insert_query,
+                               (uid, row['name'], row['email'], row['age']))
             else:
                 print(f"Skipped (already exists): {row['email']}")
     connection.commit()
