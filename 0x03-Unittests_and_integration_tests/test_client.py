@@ -82,3 +82,19 @@ class TestGithubOrgClient(unittest.TestCase):
             # Assert _public_repos_url and get_json were called exactly once
             mock_public_url.assert_called_once()
             mock_get_json.assert_called_once_with("http://fake.url/repos")
+
+    @parameterized.expand([
+        (
+            {"license": {"key": "my_license"}}, "my_license", True
+        ),
+        (
+            {"license": {"key": "other_license"}}, "my_license", False
+        ),
+        (
+            {}, "my_license", False  # Edge case: license key missing
+        ),
+    ])
+    def test_has_license(self, repo, license_key, expected):
+        """Test GithubOrgClient.has_license correctly matches license"""
+        result = GithubOrgClient.has_license(repo, license_key)
+        self.assertEqual(result, expected)
